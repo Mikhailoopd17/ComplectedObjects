@@ -1,6 +1,6 @@
 package group.object_registry.Entity;
 
-public class SomeObj {
+public class AObject {
     private EntityObject entityObject;
     private String custom;
 
@@ -18,5 +18,9 @@ public class SomeObj {
 
     public void setCustom(String custom) {
         this.custom = custom;
+    }
+    public int getIdCustomer(){
+        String [] name = custom.split("-");
+        return Integer.parseInt(name[0]);
     }
 }
