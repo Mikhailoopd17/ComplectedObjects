@@ -3,7 +3,6 @@ package group.object_registry.Service;
 import group.object_registry.DAO.CustomerDAO;
 import group.object_registry.DAO.CustomerDaoImpl;
 import group.object_registry.Entity.Customer;
-import group.object_registry.Entity.EntityObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +18,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<Customer> listCustomer() {
         return customerDAO.customerList();
+    }
+
+    @Override
+    public List<String> id_names() {
+        return customerDAO.id_names();
     }
 
     @Override

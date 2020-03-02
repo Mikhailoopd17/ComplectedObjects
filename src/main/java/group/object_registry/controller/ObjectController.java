@@ -1,7 +1,7 @@
 package group.object_registry.controller;
 
-import group.object_registry.Entity.Customer;
 import group.object_registry.Entity.EntityObject;
+import group.object_registry.Entity.SomeObj;
 import group.object_registry.Service.CustomerService;
 import group.object_registry.Service.CustomerServiceImpl;
 import group.object_registry.Service.ObjectService;
@@ -32,17 +32,20 @@ public class ObjectController{
         return model;
     }
 
-    @RequestMapping(value = "/new")
+    @RequestMapping(value = "/newObject")
     public String newObject(Model model) {
-        List<Customer> list = customerService.listCustomer();
-        EntityObject object = new EntityObject();
-        model.addAttribute("object", object);
-        model.addAttribute("customers", list);
+        List<String> names = customerService.id_names();
+        model.addAttribute("object", new SomeObj());
+        model.addAttribute("customers", names);
         return "/newObject";
     }
 
     @RequestMapping(value ="/addObject", method=RequestMethod.POST)
-    public ModelAndView addObject(@ModelAttribute("object") EntityObject object){
+    public ModelAndView addObject(@ModelAttribute("object") SomeObj obj){
+        String [] name = obj.getCustom().split("-");
+        int id = Integer.parseInt(name[0]);
+        EntityObject object = obj.getEntityObject();
+        object.setCustomer(customerService.getById(id));
         objectService.add(object);
         return new ModelAndView("redirect:/objects");
     }

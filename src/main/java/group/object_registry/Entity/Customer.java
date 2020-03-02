@@ -47,9 +47,9 @@ public class Customer {
     public void setLink(String link) {
         this.link = link;
     }
-//
-//    @Override
-//    public String toString(){
-//        return this.id + " - "+this.name;
-//    }
+
+    @Override
+    public String toString(){
+        return this.id + " - "+this.name;
+    }
 }

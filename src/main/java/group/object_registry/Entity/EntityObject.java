@@ -19,6 +19,14 @@ public class EntityObject {
     @JoinColumn(name = "idCustomer")
     private Customer customer;
 
+    public EntityObject(){}
+
+//    public EntityObject(String name, String desc, String cust){
+//        this.nameObject = name;
+//        this.description = desc;
+//        this.customer = new Customer(cust,"");
+//    }
+
     public int getIdObject() {
         return idObject;
     }

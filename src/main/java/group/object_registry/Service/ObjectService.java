@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface ObjectService {
     List<EntityObject> list();
+
     void add(EntityObject object);
     void delete(int id);
     EntityObject getById (int id);

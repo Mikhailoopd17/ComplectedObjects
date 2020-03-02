@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -23,6 +24,16 @@ public class CustomerDaoImpl implements CustomerDAO {
     @Override
     public List customerList() {
         return getCurrentSession().createQuery("FROM Customer").list();
+    }
+
+    @Override
+    public List<String> id_names() {
+        List<Customer> customers =  customerList();
+        List<String> names = new ArrayList<>();
+        for (Customer c:customers) {
+            names.add(c.getId()+"-"+c.getName());
+        }
+        return names;
     }
 
     @Override

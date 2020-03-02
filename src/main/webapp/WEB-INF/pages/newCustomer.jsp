@@ -45,7 +45,7 @@
 
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="Сохранить">
+                    <form:button type="submit" value="/addCustomer">Сохранить</form:button>
                 </td>
             </tr>
         </table>

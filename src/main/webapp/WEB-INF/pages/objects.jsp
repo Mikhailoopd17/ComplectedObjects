@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/res/header.css"/>">
+    <link rel="stylesheet"  href="<c:url value="/res/header.css"/>">
     <title>Objects</title>
 </head>
 <body>
@@ -75,7 +75,7 @@
 <div class="content">
     <h2>Реестр объектов</h2>
     <div>
-        <form action="/new">
+        <form action="/newObject">
             <input type="submit" value="Добавить объект">
         </form>
 

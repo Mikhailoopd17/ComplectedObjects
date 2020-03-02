@@ -12,24 +12,18 @@ import java.util.List;
 @Service
 @Transactional
 public class ObjectServiceImpl implements ObjectService {
-
     @Autowired
-    public ObjectDAO objectDAO= new ObjectDAOImpl();
+    ObjectDAO objectDAO = new ObjectDAOImpl();
 
     @Override
     public List<EntityObject> list() {
         return objectDAO.list();
     }
 
+
+
     @Override
     public void add(EntityObject object) {
-        boolean check = false;
-        List<EntityObject> list =objectDAO.list();
-        for (EntityObject o:list) {
-            if(o.getNameObject().equals(object.getNameObject()))
-                check = true;
-        }
-        if(!check)
             objectDAO.add(object);
     }
 
