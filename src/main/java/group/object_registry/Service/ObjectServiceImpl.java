@@ -2,7 +2,7 @@ package group.object_registry.Service;
 
 import group.object_registry.DAO.ObjectDAO;
 import group.object_registry.DAO.ObjectDAOImpl;
-import group.object_registry.Entity.EntityObject;
+import group.object_registry.Entity.Contract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,14 +16,14 @@ public class ObjectServiceImpl implements ObjectService {
     ObjectDAO objectDAO = new ObjectDAOImpl();
 
     @Override
-    public List<EntityObject> list() {
+    public List<Contract> list() {
         return objectDAO.list();
     }
 
 
 
     @Override
-    public void add(EntityObject object) {
+    public void add(Contract object) {
             objectDAO.add(object);
     }
 
@@ -33,7 +33,7 @@ public class ObjectServiceImpl implements ObjectService {
     }
 
     @Override
-    public EntityObject getById(int id) {
+    public Contract getById(int id) {
         return objectDAO.getById(id);
     }
 }

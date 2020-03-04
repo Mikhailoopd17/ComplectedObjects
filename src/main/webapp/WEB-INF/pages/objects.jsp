@@ -3,76 +3,26 @@
 
 <html>
 <head>
-    <link rel="stylesheet"  href="<c:url value="/res/header.css"/>">
+    <link rel="stylesheet"  href="<c:url value="/res/some.css"/>">
+    <script src="<c:url value="/res/some.js"/>"></script>
     <title>Objects</title>
 </head>
 <body>
-<header>
-    <nav class="dws-menu">
-        <input type="checkbox" name="toggle" id="menu" class="toggleMenu">
-        <label for="menu" class="toggleMenu"><i class="fa fa-bars"></i>Меню</label>
-        <ul>
-            <li><a href="#"><i class="fa fa-home"></i>Главная</a></li>
-            <li>
-                <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1">
-                <a href="#"><i class="fa fa-shopping-cart"></i>Продукция</a>
-                <label for="sub_m1" class="toggleSubmenu"><i class="fa"></i></label>
-                <ul>
-                    <li>
-                        <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1-1">
-                        <a href="#">Одежда</a>
-                        <label for="sub_m1-1" class="toggleSubmenu"><i class="fa"></i></label>
-                        <ul>
-                            <li><a href="#">Обувь</a></li>
-                            <li><a href="#">Куртки</a></li>
-                            <li><a href="#">Брюки</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1-2">
-                        <a href="#">Электроника</a>
-                        <label for="sub_m1-2" class="toggleSubmenu"><i class="fa"></i></label>
-                        <ul>
-                            <li><a href="#">Камеры</a></li>
-                            <li><a href="#">Компьютеры</a></li>
-                            <li>
-                                <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1-2-1">
-                                <a href="#">Телефоны</a>
-                                <label for="sub_m1-2-1" class="toggleSubmenu"><i class="fa"></i></label>
-                                <ul>
-                                    <li><a href="#">Samsung</a></li>
-                                    <li><a href="#">Flf</a></li>
-                                    <li><a href="#">Apple</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Продукты питания</a></li>
-                    <li><a href="#">Инструменты</a></li>
-                    <li><a href="#">Быт. химия</a></li>
-                </ul>
-            </li>
-            <li>
-                <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m2">
-                <a href="#"><i class="fa fa-cogs"></i>Услуги</a>
-                <label for="sub_m2" class="toggleSubmenu"><i class="fa"></i></label>
-                <ul>
-                    <li><a href="#">Услуга 1</a></li>
-                    <li><a href="#">Услуга 2</a></li>
-                    <li><a href="#">Услуга 3</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-th-list"></i>Новости</a></li>
-            <li><a href="#"><i class="fa fa-envelope-open"></i>Контакты</a></li>
-        </ul>
-    </nav>
-</header>
+<div class="st_nav">
+    <ul class="st_ul">
+        <li class="st_li st_li_1"><a href="#" class="st_a anchor">HOME</a></li>
+        <li class="st_li st_li_2"><a href="#" class="st_a anchor">SERVICES</a></li>
+        <li class="st_li st_li_3"><a href="#" class="st_a anchor">PRODUCTS</a></li>
+        <li class="st_li st_li_4"><a href="#" class="st_a anchor">ABOUT</a></li>
+        <li class="st_li st_li_5"><a href="#" class="st_a anchor">CONTACT</a></li>
+    </ul>
+</div>
 
 <link rel="stylesheet" type="text/css" href="<c:url value="/res/style.css"/>">
 
 
-
-<div class="content">
+<div id="content">
+    <div class="content">
     <h2>Реестр объектов</h2>
     <div>
         <form action="/newObject">
@@ -115,6 +65,6 @@
         </c:forEach>
     </ul>
 </div>
-
+</div>
 </body>
 </html>

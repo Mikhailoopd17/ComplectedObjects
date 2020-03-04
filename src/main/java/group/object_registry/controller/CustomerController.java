@@ -38,14 +38,14 @@ public class CustomerController {
         return new ModelAndView("redirect:/customers");
     }
 
-    @RequestMapping(value ="/deleteCustomer/{id}", method=RequestMethod.GET)
-    public ModelAndView deleteCustomer(@PathVariable("id") int id){
+    @RequestMapping(value ="/deleteCustomer/={id}", method=RequestMethod.GET)
+    public ModelAndView deleteCustomer(@PathVariable("id") Long id){
         customerService.deleteCustomer(id);
         return new ModelAndView("redirect:/customers");
     }
 
-    @RequestMapping(value = "/viewCustomer/{id}")
-    public String viewCustomer(@PathVariable int id, Model model) {
+    @RequestMapping(value = "/viewCustomer/={id}")
+    public String viewCustomer(@PathVariable Long id, Model model) {
         Customer customer = customerService.getById(id);
         model.addAttribute("customer", customer);
         //model.addObject("customer", customer);

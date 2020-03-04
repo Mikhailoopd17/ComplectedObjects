@@ -1,14 +1,14 @@
 package group.object_registry.Entity;
 
 public class AObject {
-    private EntityObject entityObject;
+    private Contract entityObject;
     private String custom;
 
-    public EntityObject getEntityObject() {
+    public Contract getEntityObject() {
         return entityObject;
     }
 
-    public void setEntityObject(EntityObject entityObject) {
+    public void setEntityObject(Contract entityObject) {
         this.entityObject = entityObject;
     }
 
@@ -19,8 +19,9 @@ public class AObject {
     public void setCustom(String custom) {
         this.custom = custom;
     }
-    public int getIdCustomer(){
+
+    public Long getIdCustomer(){
         String [] name = custom.split("-");
-        return Integer.parseInt(name[0]);
+        return Long.parseLong(name[0]);
     }
 }

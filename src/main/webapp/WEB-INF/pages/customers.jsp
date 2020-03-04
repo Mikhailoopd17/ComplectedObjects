@@ -3,116 +3,98 @@
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/res/header.css"/>">
     <title>Customers</title>
 </head>
 <body>
-<header>
-    <nav class="dws-menu">
-        <input type="checkbox" name="toggle" id="menu" class="toggleMenu">
-        <label for="menu" class="toggleMenu"><i class="fa fa-bars"></i>Меню</label>
-        <ul>
-            <li><a href="#"><i class="fa fa-home"></i>Главная</a></li>
-            <li>
-                <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1">
-                <a href="#"><i class="fa fa-shopping-cart"></i>Продукция</a>
-                <label for="sub_m1" class="toggleSubmenu"><i class="fa"></i></label>
-                <ul>
-                    <li>
-                        <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1-1">
-                        <a href="#">Одежда</a>
-                        <label for="sub_m1-1" class="toggleSubmenu"><i class="fa"></i></label>
-                        <ul>
-                            <li><a href="#">Обувь</a></li>
-                            <li><a href="#">Куртки</a></li>
-                            <li><a href="#">Брюки</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1-2">
-                        <a href="#">Электроника</a>
-                        <label for="sub_m1-2" class="toggleSubmenu"><i class="fa"></i></label>
-                        <ul>
-                            <li><a href="#">Камеры</a></li>
-                            <li><a href="#">Компьютеры</a></li>
-                            <li>
-                                <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m1-2-1">
-                                <a href="#">Телефоны</a>
-                                <label for="sub_m1-2-1" class="toggleSubmenu"><i class="fa"></i></label>
-                                <ul>
-                                    <li><a href="#">Samsung</a></li>
-                                    <li><a href="#">Flf</a></li>
-                                    <li><a href="#">Apple</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Продукты питания</a></li>
-                    <li><a href="#">Инструменты</a></li>
-                    <li><a href="#">Быт. химия</a></li>
-                </ul>
-            </li>
-            <li>
-                <input type="checkbox" name="toggle" class="toggleSubmenu" id="sub_m2">
-                <a href="#"><i class="fa fa-cogs"></i>Услуги</a>
-                <label for="sub_m2" class="toggleSubmenu"><i class="fa"></i></label>
-                <ul>
-                    <li><a href="#">Услуга 1</a></li>
-                    <li><a href="#">Услуга 2</a></li>
-                    <li><a href="#">Услуга 3</a></li>
-                </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-th-list"></i>Новости</a></li>
-            <li><a href="#"><i class="fa fa-envelope-open"></i>Контакты</a></li>
-        </ul>
-    </nav>
-</header>
 
-<link rel="stylesheet" type="text/css" href="<c:url value="/res/style.css"/>">
-
-
-
-<div class="content">
-    <h2>Перечень заказчиков</h2>
-    <div>
-        <form action="/newCustomer">
-            <input type="submit" value="Добавить нового Заказчика">
-        </form>
-
-        <form action="/search">
-            <input type="text" content="str">
-            <input type="submit" value="Поиск">
-        </form>
-
-    </div>
+<link rel="stylesheet" type="text/css" href="<c:url value="/res/some.css"/>">
+<script src="<c:url value="/res/some.js"/>"></script>
+<div class="st_nav">
+    <ul class="st_ul">
+        <li class="st_li st_li_1"><a href="#" class="st_a anchor">HOME</a></li>
+        <li class="st_li st_li_2"><a href="#" class="st_a anchor">SERVICES</a></li>
+        <li class="st_li st_li_3"><a href="#" class="st_a anchor">PRODUCTS</a></li>
+        <li class="st_li st_li_4"><a href="#" class="st_a anchor">ABOUT</a></li>
+        <li class="st_li st_li_5"><a href="#" class="st_a anchor">CONTACT</a></li>
+    </ul>
 </div>
 
-<div>
+
+
+
+
+<div id="header">
+    <h2 align="center">Перечень заказчиков</h2>
+    <table align="center">
+        <tr>
+            <td>
+                <form action="/newCustomer">
+                    <input type="submit" value="Добавить нового Заказчика">
+                </form>
+            </td>
+            <td>&nbsp</td>
+            <td></td>
+            <td>
+                <form action="/search">
+                    <input type="text" content="str">
+                    <input type="submit" value="Поиск">
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div id="content_table">
+    <div class="content">
     <ul class="responsive-table">
-        <li class="table-header">
-            <div class="col col-1" >№</div>
-            <div class="col col-2">Наименование</div>
-            <div class="col col-3">Ссылка</div>
-            <div class="col col-4">Действие</div>
-        </li>
+<%--        <li class="table-header">--%>
+<%--            <div class="col col-1" >№</div>--%>
+<%--            <div class="col col-2">Наименование</div>--%>
+<%--            <div class="col col-3">Ссылка</div>--%>
+<%--            <div class="col col-4"></div>--%>
+<%--        </li>--%>
         <c:forEach items = "${customer}" var="customer">
             <li class="table-row">
-                <div class="col col-1" data-label="№">${customer.id}</div>
-                <div class="col col-2" data-label="Наименование">${customer.name}</div>
-                <div class="col col-3" data-label="Ссылка">${customer.link}</div>
-                <div class="col col-4" data-label="Действие"></div>
-                <div class="col col-4"><a href="/viewCustomer/${customer.id}"> Редактировать </a></div>
-                <div class="col col-4"><a href="/deleteCustomer/${customer.id}"> Удалить </a></div>
-<%--                Добавить раскрывающееся меню с развернутой информацией по заказчику--%>
-                <a onclick="javascript:document.getElementById('submenu').style.display='block'" ondblclick="javascript:document.getElementById('submenu').style.display='none'" href="javascript:void(0)">Подробнее</a>
-                <div id="submenu" style="display:none; text-align:left;">
-                    <div class="col col-4" data-label="Действие"><a onclick="javascript:document.getElementById('subMenuTip0').style.display='none'" href="javascript:void(0)">Закрыть</a></div>
-                </div>
+                <table>
+                    <tr>
+                        <div class="col col-2">
+                            <p class="p_title">Наименование</p>
+                            <p>${customer.name}</p>
+                        </div>
+
+                        <div class="col col-3">
+                            <p class="p_title">Ссылка</p>
+                            <p>${customer.email}</p>
+                        </div>
+                        <div class="col col-3">
+                            <p class="p_title"></p>
+                            <p>
+                                <a onclick="document.getElementById('submenu').style.display='block'"
+                                   ondblclick="document.getElementById('submenu').style.display='none'"
+                                   href="javascript:void(0)">Подробнее
+                                </a>
+                            </p>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div>
+                            <p>${customer.id}</p>
+                            <p>${customer.inn}</p>
+                            <p>${customer.kpp}</p>
+                            <p>${customer.director.id}</p>
+                            <p>${customer.director.name}</p>
+                            <p>${customer.director.number}</p>
+                            <a href="/viewCustomer/=${customer.id}"> Редактировать </a>
+                            <a href="/deleteCustomer/=${customer.id}"> Удалить </a>
+                        </div>
+                    </tr>
+                </table>
+
 
             </li>
         </c:forEach>
     </ul>
 </div>
-
+</div>
 </body>
 </html>

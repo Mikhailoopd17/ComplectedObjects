@@ -1,7 +1,7 @@
 package group.object_registry.controller;
 
 import group.object_registry.Entity.AObject;
-import group.object_registry.Entity.EntityObject;
+import group.object_registry.Entity.Contract;
 import group.object_registry.Service.CustomerService;
 import group.object_registry.Service.CustomerServiceImpl;
 import group.object_registry.Service.ObjectService;
@@ -25,7 +25,7 @@ public class ObjectController{
 
     @RequestMapping(value = "/objects", method = RequestMethod.GET)
     public ModelAndView objects(){
-        List<EntityObject> list = objectService.list();
+        List<Contract> list = objectService.list();
         ModelAndView model = new ModelAndView();
         model.setViewName("objects");
         model.addObject("objects", list);
@@ -42,7 +42,7 @@ public class ObjectController{
 
     @RequestMapping(value ="/addObject", method=RequestMethod.POST)
     public ModelAndView addObject(@ModelAttribute("object") AObject obj){
-        EntityObject object = obj.getEntityObject();
+        Contract object = obj.getEntityObject();
         object.setCustomer(customerService.getById(obj.getIdCustomer()));
         objectService.add(object);
         return new ModelAndView("redirect:/objects");

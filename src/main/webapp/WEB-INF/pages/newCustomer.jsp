@@ -22,7 +22,7 @@
     <c:url var="addCustomer" value="/addCustomer"/>
 
     <form:form modelAttribute="customer" method="post" action="${addCustomer}">
-        <form:hidden path="id" id="${customer}"/>
+        <form:hidden path="id" id="${customer.id}"/>
         <table>
             <tr>
                 <td>
@@ -36,12 +36,68 @@
             </tr>
             <tr>
                 <td>
-                    <form:label path="link">
+                    <form:label path="number" id="number">
+                        <spring:message text="Номер телефона"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="number" id="number"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <form:label path="email">
                         <spring:message text="Ссылка"/>
                     </form:label>
                 </td>
-                <td><form:input path="link"/></td>
+                <td><form:input path="email"/></td>
             </tr>
+
+            <tr>
+                <td>
+                    <form:label path="inn" id="inn">
+                        <spring:message text="ИНН"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="inn" id="inn"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <form:label path="kpp" id="kpp">
+                        <spring:message text="КПП"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="kpp" id="kpp"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <form:label path="director.name" id="director.name">
+                        <spring:message text="Имя директора"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="director.name" id="director.name"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <form:label path="director.number" id="director.number">
+                        <spring:message text="Имя директора"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="director.number" id="director.number"/>
+                </td>
+            </tr>
+
+
 
             <tr>
                 <td colspan="2" align="center">

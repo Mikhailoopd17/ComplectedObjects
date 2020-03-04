@@ -1,13 +1,13 @@
 package group.object_registry.DAO;
 
-import group.object_registry.Entity.EntityObject;
+import group.object_registry.Entity.Contract;
 
 import java.util.List;
 
 public interface ObjectDAO {
-    List<EntityObject> list();
+    List<Contract> list();
 
-    void add(EntityObject object);
+    void add(Contract object);
     void delete(int id);
-    EntityObject getById (int id);
+    Contract getById (int id);
 }

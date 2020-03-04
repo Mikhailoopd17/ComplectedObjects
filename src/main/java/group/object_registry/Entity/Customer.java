@@ -3,49 +3,63 @@ package group.object_registry.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Customer")
-public class Customer {
+@Table(name = "customer")
+public class Customer extends AEntity{
 
-    private int id;
+    private String email;
 
-    private String name;
+    private Long inn;
 
-    private String link;
+    private Long kpp;
+
+    private Director director;
 
     public Customer(){};
     
-    public Customer(String name, String link){
-        this.link = link;
+    public Customer(String name, String number, String email, Long inn, Long kpp, Director dir){
         this.name = name;
+        this.number = number;
+        this.email = email;
+        this.inn = inn;
+        this.kpp = kpp;
+        this.director = dir;
     }
 
-    @Id
-    @Column(name = "idCustomer")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int getId() {
-        return id;
+    @Column
+    public String getEmail() {
+        return email;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    @Column(name = "nameCustomer")
-    public String getName() {
-        return name;
+    @Column
+    public Long getInn() {
+        return inn;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInn(Long inn) {
+        this.inn = inn;
     }
 
-    @Column(name = "link")
-    public String getLink() {
-        return link;
+    @Column
+    public Long getKpp() {
+        return kpp;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setKpp(Long kpp) {
+        this.kpp = kpp;
+    }
+
+    @ManyToOne (optional = false, cascade = CascadeType.ALL)
+    @JoinColumn
+    public Director getDirector() {
+        return director;
+    }
+
+    public void setDirector(Director director) {
+        this.director = director;
     }
 
     @Override

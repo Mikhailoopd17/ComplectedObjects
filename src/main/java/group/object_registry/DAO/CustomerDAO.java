@@ -9,7 +9,7 @@ public interface CustomerDAO {
     List<String> id_names();
 
     void addCustomer(Customer customer);
-    void deleteCustomer(int id);
-    Customer getById(int id);
+    void deleteCustomer(Long id);
+    Customer getById(Long id);
     public void update(Customer customer);
 }

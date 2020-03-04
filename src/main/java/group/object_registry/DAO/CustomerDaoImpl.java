@@ -23,31 +23,31 @@ public class CustomerDaoImpl implements CustomerDAO {
 
     @Override
     public List customerList() {
-        return getCurrentSession().createQuery("FROM Customer").list();
+        return getCurrentSession().createQuery("from Customer").list();
     }
 
     @Override
     public List<String> id_names() {
-        List<Customer> customers =  customerList();
-        List<String> names = new ArrayList<>();
-        for (Customer c:customers) {
-            names.add(c.getId()+"-"+c.getName());
+        List<Customer> customers = customerList();
+        List<String> list = new ArrayList<>();
+        for (Customer c: customers) {
+            list.add(c.getId()+"-"+c.getName());
         }
-        return names;
+        return list;
     }
 
     @Override
-    public void addCustomer(Customer customer) {
+    public void addCustomer(Customer customer){
         getCurrentSession().persist(customer);
     }
 
     @Override
-    public void deleteCustomer(int id) {
+    public void deleteCustomer(Long id) {
         getCurrentSession().remove(getById(id));
     }
 
     @Override
-    public Customer getById(int id) {
+    public Customer getById(Long id) {
         return getCurrentSession().get(Customer.class, id);
     }
 

@@ -27,25 +27,25 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void addCustomer(Customer customer) {
-        boolean check = false;
-        List<Customer> list =customerDAO.customerList();
-        for (Customer o:list) {
-            if (o.getName().equals(customer.getName())) {
-                check = true;
-                break;
-            }
-        }
-        if(!check)
+//        boolean check = false;
+//        List<Customer> list =customerDAO.customerList();
+//        for (Customer o:list) {
+//            if (o.getName().equals(customer.getName())) {
+//                check = true;
+//                break;
+//            }
+//        }
+//        if(!check)
             customerDAO.addCustomer(customer);
     }
 
     @Override
-    public void deleteCustomer(int id) {
+    public void deleteCustomer(Long id) {
         customerDAO.deleteCustomer(id);
     }
 
     @Override
-    public Customer getById(int id) {
+    public Customer getById(Long id) {
         return customerDAO.getById(id);
     }
 

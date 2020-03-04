@@ -10,8 +10,8 @@ public interface CustomerService {
 
     void addCustomer(Customer customer);
 
-    void deleteCustomer(int id);
+    void deleteCustomer(Long id);
 
-    Customer getById(int id);
+    Customer getById(Long id);
     public void update(Customer customer);
 }

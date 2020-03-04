@@ -1,7 +1,7 @@
 package group.object_registry.DAO;
 
+import group.object_registry.Entity.Contract;
 import group.object_registry.Entity.Customer;
-import group.object_registry.Entity.EntityObject;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class ObjectDAOImpl implements ObjectDAO {
 
 
     @Override
-    public void add(EntityObject object) {
+    public void add(Contract object) {
         getCurrentSession().save(object);
     }
 
@@ -39,7 +39,7 @@ public class ObjectDAOImpl implements ObjectDAO {
     }
 
     @Override
-    public EntityObject getById(int id) {
-        return getCurrentSession().get(EntityObject.class, id);
+    public Contract getById(int id) {
+        return getCurrentSession().get(Contract.class, id);
     }
 }
