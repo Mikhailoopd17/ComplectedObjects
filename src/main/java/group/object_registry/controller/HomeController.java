@@ -24,7 +24,7 @@ public class HomeController {
     }
     @RequestMapping(value = "/some", method = RequestMethod.GET)
     public ModelAndView some(){
-        List<Director> list = directorService.list();
+        List<Director> list = directorService.listFull();
         ModelAndView model = new ModelAndView();
         model.setViewName("some");
         model.addObject("directors", list);

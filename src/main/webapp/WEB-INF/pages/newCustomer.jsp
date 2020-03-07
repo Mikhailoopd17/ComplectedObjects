@@ -6,110 +6,79 @@
          pageEncoding="UTF-8"%>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
+
+
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/res/some.css"/>">
+
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Новый клиент</title>
 </head>
 <body>
 
-<div align="center">
-    <h1>Форма добавления нового клиента</h1>
+<script src="<c:url value="/res/some.js"/>"></script>
 
-    <c:url var="addCustomer" value="/addCustomer"/>
-
-    <form:form modelAttribute="customer" method="post" action="${addCustomer}">
-        <form:hidden path="id" id="${customer.id}"/>
-        <table>
-            <tr>
-                <td>
-                    <form:label path="name" id="name">
-                        <spring:message text="Название"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="name" id="name"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <form:label path="number" id="number">
-                        <spring:message text="Номер телефона"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="number" id="number"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <form:label path="email">
-                        <spring:message text="Ссылка"/>
-                    </form:label>
-                </td>
-                <td><form:input path="email"/></td>
-            </tr>
-
-            <tr>
-                <td>
-                    <form:label path="inn" id="inn">
-                        <spring:message text="ИНН"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="inn" id="inn"/>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <form:label path="kpp" id="kpp">
-                        <spring:message text="КПП"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="kpp" id="kpp"/>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <form:label path="director.name" id="director.name">
-                        <spring:message text="Имя директора"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="director.name" id="director.name"/>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <form:label path="director.number" id="director.number">
-                        <spring:message text="Имя директора"/>
-                    </form:label>
-                </td>
-                <td>
-                    <form:input path="director.number" id="director.number"/>
-                </td>
-            </tr>
-
-
-
-            <tr>
-                <td colspan="2" align="center">
-                    <form:button type="submit" value="/addCustomer">Сохранить</form:button>
-                </td>
-            </tr>
-        </table>
-    </form:form>
-
+<div class="st_nav">
+    <ul class="st_ul">
+        <li class="st_li st_li_1"><a href="#" class="st_a anchor">HOME</a></li>
+        <li class="st_li st_li_2"><a href="#" class="st_a anchor">SERVICES</a></li>
+        <li class="st_li st_li_3"><a href="#" class="st_a anchor">PRODUCTS</a></li>
+        <li class="st_li st_li_4"><a href="#" class="st_a anchor">ABOUT</a></li>
+        <li class="st_li st_li_5"><a href="#" class="st_a anchor">CONTACT</a></li>
+    </ul>
 </div>
 
+    <div id="content">
+    <form class="contact_form" action="<c:url value="/addCustomer"/>" method="post" name="contact_form">
+        <ul>
+            <li>
+                <h2>Форма добавления нового Заказчика</h2>
+                <span class="required_notification">* Обязательные поля</span>
+            </li>
+            <li>
+                <label for="${customer.name}">Наименование:</label>
+                <input type="text" name="name"  placeholder="Введите имя" required />
+            </li>
+            <li>
+                <label for="${customer.number}">Номер телефона:</label>
+                <input type="text" name="number" placeholder="+7(ххх)-ххх-хх-хх" required />
+                <span class="form_hint">Формат "+7(ххх)-ххх-хх-хх или 8(ххх)-ххх-хх-хх"</span>
+            </li>
+            <li>
+                <label for="${customer.email}">Email:</label>
+                <input type="email" name="email" placeholder="example@example.com" required />
+                <span class="form_hint">Формат "name@something.com"</span>
+            </li>
 
+            <li>
+                <label for="${customer.inn}">ИНН:</label>
+                <input type="number" name="inn" placeholder="ИНН" required />
+            </li>
+            <li>
+                <label for="${customer.kpp}">КПП:</label>
+                <input type="number" name="kpp" placeholder="КПП" required />
+            </li>
 
+            <li>
+                <label for="${director.name}">ФИО директора:</label>
+                <input type="text" name="director.name" placeholder="Введите ФИО" required />
+            </li>
+
+            <li>
+                <label for="${director.number}">Номер телефона директора:</label>
+                <input type="text" name="director.number" placeholder="Введите № телефона" required />
+                <span class="form_hint">Формат "+7(ххх)-ххх-хх-хх или 8(ххх)-ххх-хх-хх"</span>
+            </li>
+
+            <li>
+                <button class="submit" type="submit">Добавить в базу</button>
+            </li>
+        </ul>
+
+    </form>
+    </div>
 </body>
 </html>

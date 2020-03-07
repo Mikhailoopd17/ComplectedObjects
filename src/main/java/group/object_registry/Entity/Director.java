@@ -12,7 +12,7 @@ public class Director extends AEntity {
     public Director() {
     }
 
-    @OneToMany(mappedBy="director", fetch= FetchType.EAGER)
+    @OneToMany(mappedBy="director", fetch= FetchType.LAZY)
     public Collection<Customer> getCustomers() {
         return customers;
     }

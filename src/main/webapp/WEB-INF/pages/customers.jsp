@@ -1,14 +1,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 <head>
     <title>Customers</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/res/some.css"/>">
+    <script src="<c:url value="/res/some.js"/>"></script>
 </head>
 <body>
 
-<link rel="stylesheet" type="text/css" href="<c:url value="/res/some.css"/>">
-<script src="<c:url value="/res/some.js"/>"></script>
+
 <div class="st_nav">
     <ul class="st_ul">
         <li class="st_li st_li_1"><a href="#" class="st_a anchor">HOME</a></li>
@@ -28,15 +31,15 @@
     <table align="center">
         <tr>
             <td>
-                <form action="/newCustomer">
+                <form action="<c:url value="/newCustomer"/>">
                     <input type="submit" value="Добавить нового Заказчика">
                 </form>
             </td>
             <td>&nbsp</td>
             <td></td>
             <td>
-                <form action="/search">
-                    <input type="text" content="str">
+                <form action="<c:url value=""/>">
+                    <input type="text" placeholder="Введите наименование организации" size="50">
                     <input type="submit" value="Поиск">
                 </form>
             </td>
@@ -95,6 +98,24 @@
         </c:forEach>
     </ul>
 </div>
+
+
+<div>
+    <a class="show-btn" href = "javascript:void(0)" onclick = "document.getElementById('envelope').style.display='block';document.getElementById('fade').style.display='block'">Обратная связь</a>
+    <div id="envelope" class="envelope">
+        <a class="close-btn" title="Закрыть" href="javascript:void(0)" onclick = "document.getElementById('envelope').style.display='none';document.getElementById('fade').style.display='none'"></a>
+        <div class="title">Напишите нам сообщение!</div>
+        <form method="post" action="#">
+            <input type="text" name="sender" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'* Ваше Имя':this.value;" value="* Ваше Имя" class="your-name" required />
+            <input type="text" name="email" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'* Ваш Email':this.value;" value="* Ваш Email" class="email-address" required />
+            <textarea class="your-message" name="text" placeholder="* Ваше сообщение"></textarea>
+            <input type="submit" name="send" value="Отправить" class="send-message">
+        </form>
+    </div>
+    <div id="fade" class="black-overlay"></div>
 </div>
+
+</div>
+
 </body>
 </html>

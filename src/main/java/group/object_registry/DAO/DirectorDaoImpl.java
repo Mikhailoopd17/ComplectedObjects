@@ -24,4 +24,9 @@ public class DirectorDaoImpl implements DirectorDAO{
     public List list() {
         return getCurrentSession().createQuery("from Director").list();
     }
+
+    @Override
+    public List listFull() {
+        return getCurrentSession().createQuery("select distinct dir from Director dir join fetch dir.customers").list();
+    }
 }

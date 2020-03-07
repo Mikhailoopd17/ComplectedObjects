@@ -20,4 +20,9 @@ public class DirectorServiceImpl implements DirectorService {
     public List<Director> list() {
         return directorDAO.list();
     }
+
+    @Override
+    public List<Director> listFull() {
+        return directorDAO.listFull();
+    }
 }

@@ -6,7 +6,10 @@ import group.object_registry.Service.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -27,8 +30,8 @@ public class CustomerController {
 
     @RequestMapping(value = "/newCustomer")
     public String newCustomer(Model model) {
-        Customer customer = new Customer();
-        model.addAttribute("customer", customer);
+        model.addAttribute("customer", new Customer());
+//        model.addAttribute("director", new Director());
         return "/newCustomer";
     }
 

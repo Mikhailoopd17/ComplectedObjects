@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface DirectorDAO {
     List<Director> list();
+    List<Director> listFull();
 }
