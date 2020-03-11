@@ -107,6 +107,16 @@
                 <form:input path="director.number" id="director.number"/>
             </td>
         </tr>
+        <tr>
+            <td>
+                <form:label path="address.code" id="code">
+                    <spring:message text="Индекс"/>
+                </form:label>
+            </td>
+            <td>
+                <form:input path="address.code" id="code"/>
+            </td>
+        </tr>
             <form:button name="SAVE" value="submit" id="SAVA">Save</form:button>
     </form:form>
 

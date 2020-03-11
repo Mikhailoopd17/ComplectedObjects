@@ -84,9 +84,9 @@
                             <p>${customer.id}</p>
                             <p>${customer.inn}</p>
                             <p>${customer.kpp}</p>
-                            <p>${customer.director.id}</p>
                             <p>${customer.director.name}</p>
-                            <p>${customer.director.number}</p>
+                            <p>${customer.address.toString()}</p>
+
                             <a href="/viewCustomer/=${customer.id}"> Редактировать </a>
                             <a href="/deleteCustomer/=${customer.id}"> Удалить </a>
                         </div>
@@ -100,20 +100,20 @@
 </div>
 
 
-<div>
-    <a class="show-btn" href = "javascript:void(0)" onclick = "document.getElementById('envelope').style.display='block';document.getElementById('fade').style.display='block'">Обратная связь</a>
-    <div id="envelope" class="envelope">
-        <a class="close-btn" title="Закрыть" href="javascript:void(0)" onclick = "document.getElementById('envelope').style.display='none';document.getElementById('fade').style.display='none'"></a>
-        <div class="title">Напишите нам сообщение!</div>
-        <form method="post" action="#">
-            <input type="text" name="sender" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'* Ваше Имя':this.value;" value="* Ваше Имя" class="your-name" required />
-            <input type="text" name="email" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'* Ваш Email':this.value;" value="* Ваш Email" class="email-address" required />
-            <textarea class="your-message" name="text" placeholder="* Ваше сообщение"></textarea>
-            <input type="submit" name="send" value="Отправить" class="send-message">
-        </form>
-    </div>
-    <div id="fade" class="black-overlay"></div>
-</div>
+<%--<div>--%>
+<%--    <a class="show-btn" href = "javascript:void(0)" onclick = "document.getElementById('envelope').style.display='block';document.getElementById('fade').style.display='block'">Обратная связь</a>--%>
+<%--    <div id="envelope" class="envelope">--%>
+<%--        <a class="close-btn" title="Закрыть" href="javascript:void(0)" onclick = "document.getElementById('envelope').style.display='none';document.getElementById('fade').style.display='none'"></a>--%>
+<%--        <div class="title">Напишите нам сообщение!</div>--%>
+<%--        <form method="post" action="#">--%>
+<%--            <input type="text" name="sender" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'* Ваше Имя':this.value;" value="* Ваше Имя" class="your-name" required />--%>
+<%--            <input type="text" name="email" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'* Ваш Email':this.value;" value="* Ваш Email" class="email-address" required />--%>
+<%--            <textarea class="your-message" name="text" placeholder="* Ваше сообщение"></textarea>--%>
+<%--            <input type="submit" name="send" value="Отправить" class="send-message">--%>
+<%--        </form>--%>
+<%--    </div>--%>
+<%--    <div id="fade" class="black-overlay"></div>--%>
+<%--</div>--%>
 
 </div>
 

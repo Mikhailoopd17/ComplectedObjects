@@ -14,15 +14,18 @@ public class Customer extends AEntity{
 
     private Director director;
 
+    private Address address;
+
     public Customer(){};
     
-    public Customer(String name, String number, String email, Long inn, Long kpp, Director dir){
+    public Customer(String name, String number, String email, Long inn, Long kpp, Director dir, Address address){
         this.name = name;
         this.number = number;
         this.email = email;
         this.inn = inn;
         this.kpp = kpp;
         this.director = dir;
+        this.address = address;
     }
 
     @Column
@@ -60,6 +63,16 @@ public class Customer extends AEntity{
 
     public void setDirector(Director director) {
         this.director = director;
+    }
+
+    @ManyToOne (optional = false, cascade = CascadeType.ALL)
+    @JoinColumn
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override

@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface CustomerService {
     List<Customer> listCustomer();
+    List<Customer> listCustomerAddress();
+
     List<String> id_names();
 
     void addCustomer(Customer customer);

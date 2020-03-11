@@ -27,6 +27,13 @@ public class CustomerDaoImpl implements CustomerDAO {
     }
 
     @Override
+    public List<Customer> customerListAddress() {
+        List<Customer> list = getCurrentSession().createQuery("select distinct cust from Customer cust join fetch cust.address ad join fetch ad.city join fetch ad.street join fetch ad.region").list();
+//                "cust.address address join fetch all properties ").list();
+        return list;
+    }
+
+    @Override
     public List<String> id_names() {
         List<Customer> customers = customerList();
         List<String> list = new ArrayList<>();

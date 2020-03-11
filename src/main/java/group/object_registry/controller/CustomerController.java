@@ -1,6 +1,8 @@
 package group.object_registry.controller;
 
 import group.object_registry.Entity.Customer;
+import group.object_registry.Service.AddressService;
+import group.object_registry.Service.AddressServiceImpl;
 import group.object_registry.Service.CustomerService;
 import group.object_registry.Service.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +21,12 @@ public class CustomerController {
     @Autowired
      CustomerService customerService = new CustomerServiceImpl();
 
+    @Autowired
+    AddressService addressService = new AddressServiceImpl();
+
     @RequestMapping(value = "/customers", method = RequestMethod.GET)
     public ModelAndView customers(){
-        List<Customer> list = customerService.listCustomer();
+        List<Customer> list = customerService.listCustomerAddress();
         ModelAndView model = new ModelAndView();
         model.setViewName("customers");
         model.addObject("customer", list);
@@ -31,7 +36,6 @@ public class CustomerController {
     @RequestMapping(value = "/newCustomer")
     public String newCustomer(Model model) {
         model.addAttribute("customer", new Customer());
-//        model.addAttribute("director", new Director());
         return "/newCustomer";
     }
 

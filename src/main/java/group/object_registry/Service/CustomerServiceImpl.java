@@ -21,6 +21,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public List<Customer> listCustomerAddress() {
+        return customerDAO.customerListAddress();
+    }
+
+    @Override
     public List<String> id_names() {
         return customerDAO.id_names();
     }

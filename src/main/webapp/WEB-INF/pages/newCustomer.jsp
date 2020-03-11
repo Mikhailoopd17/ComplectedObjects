@@ -68,9 +68,37 @@
             </li>
 
             <li>
-                <label for="${director.number}">Номер телефона директора:</label>
+                <label for="${director.number}">Номер телефона:</label>
                 <input type="text" name="director.number" placeholder="Введите № телефона" required />
                 <span class="form_hint">Формат "+7(ххх)-ххх-хх-хх или 8(ххх)-ххх-хх-хх"</span>
+            </li>
+
+            <li>
+                <label for="${address.code}">Индекс:</label>
+                <input type="number" name="address.code" placeholder="Введите индекс" required />
+            </li>
+
+            <li>
+                <label for="${address.region}">Регион:</label>
+                <input type="text" name="address.region" placeholder="Введите регион" required />
+            </li>
+
+            <li>
+                <label for="${address.city}">Город:</label>
+                <input type="text" name="address.city" placeholder="Введите город" required />
+            </li>
+            <li>
+                <label for="${address.street}">Улица:</label>
+                <input type="text" name="address.street" placeholder="Введите улицу" required />
+            </li>
+            <li>
+                <label for="${address.numberHome}">Дом:</label>
+                <input type="number" name="address.numberHome" placeholder="Введите №" required />
+            </li>
+
+            <li>
+                <label for="${address.numberApartment}">Квартира:</label>
+                <input type="number" name="address.numberApartment" placeholder="Введите №" />
             </li>
 
             <li>
